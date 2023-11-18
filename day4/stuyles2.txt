@@ -1,0 +1,31 @@
+import React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles((theme) => ({
+  appBar: {
+    backgroundColor: theme.palette.primary.main,
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
+
+const StyledAppBar = () => {
+  const classes = useStyles();
+
+  return (
+    <AppBar position="static" className={classes.appBar}>
+      <Toolbar>
+        <Typography variant="h6" className={classes.title}>
+          My App
+        </Typography>
+        {/* Add additional components or actions on the AppBar */}
+      </Toolbar>
+    </AppBar>
+  );
+};
+
+export default StyledAppBar;

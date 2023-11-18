@@ -1,0 +1,41 @@
+form problem:
+
+import React from 'react';
+
+class PassMessage extends React.Component{
+    constructor()
+    {
+        super()
+        this.state={
+            message:'WELCOME VISITOR'
+        }
+    }
+    changeMessage()
+    {
+        this.setState({
+            message: 'thank you'
+
+        })
+    }
+    render(){
+        return (
+            <div>
+
+            <h1>{this.state.message}</h1>
+            <form>
+  <label for="name">name:</label><br />
+  <input type="text" id="name" name="name" /><br />
+  <label for="phone">phone:</label><br />
+  <input type="text" id="phone" name="phone" /><br />
+  <label for="email">email:</label><br />
+  <input type="text" id="lname" name="email" /><br />
+  <label for="password">password:</label><br />
+  <input type="text" id="password" name="password" /><br />
+</form>
+            
+            <button onClick={()=>this.changeMessage()}>submit</button><br />
+            </div>
+        );
+    }
+}
+export default PassMessage;

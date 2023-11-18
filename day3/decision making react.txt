@@ -1,0 +1,54 @@
+decision making :
+
+import PassMessage from './passmessage';
+import FailMessage from './FailMessage';
+function App(props)
+{
+  const ispass=props.ispass;
+  if(ispass==true)
+  {
+    return <passmmessage />;
+  }
+  return <FailMessage/>;
+};
+export default App;
+
+function passmessage()
+{
+    return(
+        <div>
+            <h1 style={
+                {
+
+                textAlign: 'center',
+                color:'green'
+                }
+            }>Congratulation !!! you are passthe test.<br />
+            you are gay</h1>
+        </div>
+    )
+}
+export default passmessage
+
+function FailMessage()
+{
+    return(
+        <div>
+            <h1 style={
+                {
+
+                textAlign: 'center',
+                color:'red'
+                }
+            }>Congratulation !!! you are fail.</h1>
+        </div>
+    )
+}
+
+export default FailMessage
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+ReactDOM.render(<App ispass={false}/>,
+document.getElementById('root'));

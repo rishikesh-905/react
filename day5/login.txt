@@ -1,0 +1,84 @@
+import React, { useState } from 'react';
+
+function RegistrationPage() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleConfirmPasswordChange = (e) => {
+    setConfirmPassword(e.target.value);
+  };
+
+  const handleRegistration = () => {
+
+    console.log('Name:', name);
+    console.log('Email:', email);
+    console.log('Password:', password);
+    console.log('Confirm Password:', confirmPassword);
+
+  };
+
+  return (
+    <div style={{ textAlign: 'center' }}>
+      <h1>Registration Page</h1>
+      <form>
+        <div style={{ margin: '10px' }}>
+          <input
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={handleNameChange}
+            style={{ padding: '5px', borderRadius: '5px', border: '1px solid green' }} />
+        </div>
+        <div style={{ margin: '10px' }}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={handleEmailChange}
+            style={{ padding: '5px', borderRadius: '5px', border: '1px solid green' }} />
+        </div>
+        <div style={{ margin: '10px' }}>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={handlePasswordChange}
+            style={{ padding: '5px', borderRadius: '5px', border: '1px solid green' }} />
+        </div>
+        <div style={{ margin: '10px' }}>
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={handleConfirmPasswordChange}
+            style={{ padding: '5px', borderRadius: '5px', border: '1px solid green' }} />
+        </div>
+        <div style={{ margin: '10px' }}>
+          <button
+            type="button"
+            onClick={handleRegistration}
+            style={{ padding: '8px 20px', borderRadius: '5px', backgroundColor: 'blue', color: 'black', border: 'none' }}
+          >
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+}
+
+export default RegistrationPage;
